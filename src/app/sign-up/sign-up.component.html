@@ -1,0 +1,45 @@
+<div class="formsize">
+  <mat-card>
+    <form (submit)="onSavePost(RegisterForm)" #RegisterForm="ngForm">
+      <mat-form-field appearance="outline">
+        <mat-label>firstName</mat-label>
+        <input matInput name="firstName" ngModel type="text" placeholder="Name" #nameInput="ngModel" required>
+        <mat-error *ngIf="nameInput.invalid">Please enter a valid name.</mat-error>
+      </mat-form-field> <br>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" ngModel type="text" placeholder="E-mail" #emailInput="ngModel" required>
+        <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+      </mat-form-field> <br>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel"
+          required>
+        <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="outline">
+        <mat-label>contact</mat-label>
+        <input matInput name="contact" ngModel type="text" placeholder="contact" #contactInput="ngModel" required>
+        <mat-error *ngIf="contactInput.invalid">Please enter a valid contact.</mat-error>
+      </mat-form-field> <br>
+      <mat-form-field appearance="outline">
+        <mat-label>gender</mat-label>
+        <input matInput name="gender" ngModel type="text" placeholder="gender" #genderInput="ngModel" required>
+        <mat-error *ngIf="genderInput.invalid">Please enter a valid gender.</mat-error>
+      </mat-form-field> <br>
+
+
+      <div>
+        <input #singleInput type="file" name="image" (change)="selectImage($event)" />
+      </div>
+      <div>
+        <button type="submit" value="SignUp">Signup</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

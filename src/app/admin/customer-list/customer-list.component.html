@@ -1,0 +1,57 @@
+<!-- //codepen -->
+
+<div class="container">
+  <div class="row row--top-40">
+    <div class="col-md-12">
+      <h2 class="row__title">Customer List</h2>
+    </div>
+  </div>
+  <div class="row row--top-20">
+    <div class="col-md-12">
+      <div class="table-container">
+        <table class="table">
+          <thead class="table__thead">
+            <tr>
+              <th class="table__th">CustomerId</th>
+              <th class="table__th">ProfileImage</th>
+              <th class="table__th">firstName</th>
+              <th class="table__th">email</th>
+              <th class="table__th">contact</th>
+              <th class="table__th"></th>
+            </tr>
+          </thead>
+          <tbody class="table__tbody" *ngFor=" let customer of customerList">
+            <tr class="table-row table-row--angie">
+              <td class="table-row__td">
+                {{customer.id}}
+              </td>
+              <td class="table-row__td">
+                <img src="../../assets/img/{{customer.profileimage}}" class="table-row__img">
+
+              </td>
+
+              <td class="table-row__td">
+
+                <div class="table-row__info">
+                  <p class="table-row__name">{{customer.firstName |uppercase}}</p>
+                </div>
+              </td>
+              <td data-column="Policy" class="table-row__td">
+                <div class="">
+                  <p class="table-row__policy">{{customer.email}}</p>
+                </div>
+              </td>
+              <td data-column="Policy Status" class="table-row__td">
+                <p class="table-row__policy">{{customer.contact}}</p>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<p class="info-text mat-body-1" *ngIf="customerList?.length<=0"> No customer added yet!</p>

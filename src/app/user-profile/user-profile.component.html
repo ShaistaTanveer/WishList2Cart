@@ -1,0 +1,35 @@
+<form (submit)="edit(RegisterForm)" #RegisterForm="ngForm">
+  <div class="container-fluid">
+
+    <div id="upc_app" class="row">
+
+      <section id="upc_body" class="col-12">
+        <div class="row">
+          <div class="col-12 ucp_user_thumb">
+            <div class="user_img">
+              <span class="color-overlay"></span>
+              <img src="../../assets/img/{{userDetails.profileimage}}" />
+              <button type="button" class="upc_btn_file ">
+                <input class="upc_btn_file" #singleInput type="file" name="image" (change)="selectImage($event)" />
+              </button>
+
+
+            </div>
+            <div class="user_info">
+              <span class="spanEdit">TYPE TO EDIT<i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+
+              <input type="text" class="name" placeholder="{{userDetails.firstName}}" ngModel name=firstName />
+              <input type="text" class="role" placeholder="{{userDetails.contact}}" ngModel name=contact />
+            </div>
+          </div>
+        </div>
+
+        <div class="row ucp_stats_row user_social_links">
+          <div class="col-0 ucp_user_stat">
+            <button type="submit" class="btnn">save</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,167 @@
+<button class="btnn1">LIST ORDER<i class="fa fa-eye" aria-hidden="true" id="button" value="false"
+    (click)="toggle(this);"></i></button>
+
+
+<ng-container *ngIf="array.length ==0">
+  <div class="container">
+    <div class="card">
+      <h5 class="card-title">ORDERS</h5>
+    </div>
+    <div class="center">
+
+      <h4>YOU HAVE NO ORDERS</h4>
+      <button routerLink="/product" class="btn btn-primary">Shop Now</button>
+    </div>
+  </div>
+</ng-container>
+<!-- list -->
+<div *ngIf="showorder=='true'">
+  <div class="row" *ngFor="let item of array">
+    <div class="column">
+      <div class="parent">
+        <div class="info">
+
+          <table>
+            <tr>
+              <td>
+                <h6>PRODUCT NAME:-</h6>
+              </td>
+              <td colspan="2">
+                <h6>{{item.productName}}</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>DETAILS:-</h6>
+              </td>
+              <td colspan="2">
+                <h6>{{item.productDetail}}</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6> Amount:-</h6>
+              </td>
+              <td>
+                <h6>{{item.price |currency:'INR'}}</h6>
+              </td>
+            </tr>
+
+
+          </table>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- list -->
+
+
+<div class="row" *ngFor="let item of myorder">
+  <div class="column">
+    <div class="parent">
+      <div class="info">
+        <table>
+          <tr>
+            <td>
+              <h6>ORDER ID:-</h6>
+            </td>
+            <td colspan="2">
+              <h6>{{item.orderId}}</h6>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h6>ORDER DATE:-</h6>
+            </td>
+            <td colspan="2">
+              <h6>{{item.orderDate|date}}</h6>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <h6>Total Amount:-</h6>
+            </td>
+            <td>
+              <h6>{{item.bill |currency:'INR'}}</h6>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h6> Order Status:-</h6>
+            </td>
+            <td>
+              <h6>{{item.status}}</h6>
+            </td>
+          </tr>
+
+        </table>
+
+      </div>
+      <button class="btnn1">VIEW ORDER<i class="fa fa-eye" aria-hidden="true" id="button1" value="false"
+          (click)="toggle2(this,item.orderId);"></i></button>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+<div *ngIf="showorderDetail=='true'">
+  <div class="row" *ngFor="let item of orderDetails">
+    <div class="column">
+      <div class="parent">
+        <div class="preview">
+          <!-- <center> -->
+          <img src="../../assets/img/{{item.productimage}}" alt="" class="img-responsive">
+          <!-- </center> -->
+        </div>
+        <div class="info">
+
+          <table>
+            <tr>
+            <tr>
+              <td>
+                <h6>PRODUCT NAME:-</h6>
+              </td>
+              <td colspan="2">
+                <h6>{{item.productName}}</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>DETAILS:-</h6>
+              </td>
+              <td colspan="2">
+                <h6>{{item.productDetail}}</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6> Amount:-</h6>
+              </td>
+              <td>
+                <h6>{{item.price |currency:'INR'}}</h6>
+              </td>
+            </tr>
+
+
+          </table>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

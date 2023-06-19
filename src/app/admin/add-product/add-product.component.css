@@ -1,0 +1,21 @@
+mat-card {
+  width: 80%;
+  margin: auto;
+  border-style: solid;
+  border-color: rgba(1, 170, 227, 0.83);
+}
+mat-form-field {
+  border-color: rgba(1, 170, 227, 0.83);
+}
+.formsize {
+  margin-left: 35%;
+  width: 30%;
+  margin-top: 1%;
+}
+button {
+  background-color: rgba(1, 170, 227, 0.83);
+}
+
+#head {
+  background-color: rgba(1, 170, 227, 0.83);
+}

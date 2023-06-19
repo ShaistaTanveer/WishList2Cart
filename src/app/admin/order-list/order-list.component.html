@@ -1,0 +1,100 @@
+<!-- <div class="tablesearch">
+  <mat-label style="margin-left: 10%;">TABLE SEARCH</mat-label>
+  <input type="text" [(ngModel)]="customerName" placeholder=" SEARCH IN TABLE" #myInput (input)="searchTextBar()"
+    style="margin-left: 6%; width: 50%">
+</div>
+<br>
+<form (submit)="onSearch(search)" #search="ngForm">
+  <mat-label style="margin-left: 10%;">DATABASE SEARCH</mat-label>
+  <input matInput type="text" name="customerName" ngModel placeholder="SEARCH WITH NAME IN DATA BASE"
+    #dobInput="ngModel" style="margin-left: 4%; width: 50%" /> &nbsp;
+  <button class="btn btn-primary" color="primary" type="submit">Search</button>
+</form> -->
+
+
+<div class="container">
+  <div class="row row--top-40">
+    <div class="col-md-12">
+      <h2 class="row__title">Order List</h2>
+    </div>
+  </div>
+  <div class="row row--top-20">
+    <div class="col-md-12">
+      <div class="table-container">
+        <table class="table">
+          <thead class="table__thead">
+            <tr>
+              <th class="table__th">orderId</th>
+              <th class="table__th">productimage</th>
+              <th class="table__th">productName</th>
+              <th class="table__th">quantity</th>
+              <th class="table__th">orderDate</th>
+              <th class="table__th">CustomerId</th>
+              <th class="table__th">firstName</th>
+              <th class="table__th">contact</th>
+              <th class="table__th">bill</th>
+              <th class="table__th">Status</th>
+            </tr>
+          </thead>
+          <tbody class="table__tbody" *ngFor=" let order of orderList">
+            <tr class="table-row table-row--angie">
+              <td class="table-row__td">{{order.orderId}}
+              </td>
+              <td class="table-row__td">
+                <img src="../../assets/img/{{order.productimage}}" class="table-row__img">
+              </td>
+
+              <td class="table-row__td">
+                <div class="table-row__info">
+                  <p class="table-row__name">{{order.productName |uppercase}}</p>
+                </div>
+              </td>
+              <td data-column="Policy" class="table-row__td">
+                <div class="">
+                  <p class="table-row__policy">{{order.quantity}}</p>
+                </div>
+              </td>
+              <td data-column="Policy Status" class="table-row__td">
+                <p class="table-row__policy">{{order.orderDate | date}}</p>
+              </td>
+              <td data-column="Policy Status" class="table-row__td">
+                <p class="table-row__policy">{{order.customerId}}</p>
+              </td>
+              <td data-column="Policy Status" class="table-row__td">
+                <p class="table-row__policy">{{order.firstName}}</p>
+              </td>
+              <td data-column="Policy Status" class="table-row__td">
+                <p class="table-row__policy">{{order.contact}}</p>
+              </td>
+              <td data-column="Policy Status" class="table-row__td">
+                <p class="table-row__policy">{{order.bill|currency:'INR'}}</p>
+              </td>
+              <td data-column="Policy Status" class="table-row__td">
+                <p class="table-row__policy">{{order.status}}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <p class="info-text mat-body-1" *ngIf="orderList?.length<=0"> No customer added yet!</p> -->
+
+<!--
+<div class="row">
+  <div class="col-md-12 d-flex justify-content-center">
+    <div class="form-inline float-left mr-1">
+      <select class="form-control" [value]="productsPerPage" (change)="changePageSize($event)">
+        <option value="2">2 PER PAGE</option>
+        <option value="4">4 PER PAGE</option>
+        <option value="8">8 PER PAGE</option>
+      </select>
+    </div>
+    <div class="btn-group float-right">
+      <button class="btn btn-outline-primary" *ngFor="let page of pageNumber"
+        (click)="changePage(page)">{{page}}</button>
+
+    </div>
+  </div>
+</div> -->

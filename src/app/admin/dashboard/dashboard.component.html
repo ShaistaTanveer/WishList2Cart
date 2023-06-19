@@ -1,0 +1,14 @@
+<p-dropdown [options]="groupDates" [(ngModel)]="filters.selectedDates" placeholder="Select a date" [group]="true"
+  (onChange)="Fetchdetails()">
+  <ng-template let -group pTemplate="group">
+  </ng-template>
+</p-dropdown>
+
+<br>
+<br>
+<br>
+<br>
+<div>
+  <p class="row__title">New Users stats</p>
+  <c-chart class="chart-b" [data]="graph" type="bar"></c-chart>
+</div>

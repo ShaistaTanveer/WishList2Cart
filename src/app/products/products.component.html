@@ -1,0 +1,124 @@
+<section class="my-lg-14 my-8">
+
+  <div class="container">
+    <!-- <i id="cart-logo" class='fas fa-cart-plus' style='font-size:25px;color:#eea024' routerLink="/cart">{{cartcount}}</i> -->
+    <div class="row">
+      <div class="col-12 mb-6">
+        <h3 class="mb-4 nav-name">Popular Products</h3>
+      </div>
+
+    </div>
+    <!-- seacrbar -->
+
+    <div class="d-flex">
+      <input class="form-control me-2" aria-label="Search" type="text" [(ngModel)]="productName"
+        placeholder=" SEARCH IN TABLE" #myInput (input)="searchTextBar()" style="margin-left: 6%; width: 50%">
+      <form class="d-flex" (submit)="onSearch(search)" #search="ngForm">
+
+        <mat-form-field appearance="fill">
+          <mat-select [(value)]="category">
+            <mat-option value="">Sort Category</mat-option>
+            <mat-option value="clothes">clothes</mat-option>
+            <mat-option value="electronics">electronics</mat-option>
+            <mat-option value="jewellery">jewellery</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button class="btn-search-icon rounded-circle" type="submit"><i class="bi bi-search-heart"></i></button>
+
+      </form>
+      <!-- price search -->
+      <form class="d-flex" (submit)="onPrice(search)" #search="ngForm">
+        <mat-form-field appearance="fill">
+          <mat-select [(value)]="price">
+            <mat-option value="0">Sort Price</mat-option>
+            <mat-option value="100"> > 100</mat-option>
+            <mat-option value="1000">> 1000</mat-option>
+            <mat-option value="2000">>2000 </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button class="btn-search-icon rounded-circle" type="submit"><i class="bi bi-search-heart"></i></button>
+
+      </form>
+    </div>
+
+
+
+
+
+
+
+    <!-- seacrbar -->
+    <div class="row g-4 row-cols-lg-5 row-cols-2 row-cols-md-3">
+      <div class="col" *ngFor="let productList of productList1">
+        <div class="card card-product">
+          <div class="card-body">
+            <div class="text-center position-relative ">
+              <div class=" position-absolute top-0 start-0">
+                <!-- <span class="badge bg-danger">Sale</span> -->
+              </div>
+              <div class="style">
+
+                <!-- //method for online images -->
+                <!-- <a [href]="sanitize(productList.productimage)">
+                  <img src="{{productList.productimage }} " width="200" />
+                </a> -->
+
+                <!-- method for local images -->
+                <!-- <a [href]="sanitize(productList.productimage)">
+                  <img src="../../assets/img/{{productList.productimage}} " width="200"
+                    (click)="downloadImage(productList.productimage)" />
+                </a> -->
+
+                <!-- method with small fun -->
+                <a [href]="sanitize(productList.productimage)">
+                  <img src="../../assets/img/{{productList.productimage}} " width="200"
+                    (click)="downloadImage(productList)" />
+                </a>
+              </div>
+
+
+              <!-- <div class="card-product-action">
+                <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
+                    class="bi bi-eye" data-bs-toggle="tooltip" data-bs-html="true" title="Quick View"></i></a>
+                <a href="#!" class="btn-action" data-bs-toggle="tooltip" data-bs-html="true" title="Wishlist"><i
+                    class="bi bi-heart"></i></a>
+                <a href="#!" class="btn-action" data-bs-toggle="tooltip" data-bs-html="true" title="Compare"><i
+                    class="bi bi-arrow-left-right"></i></a>
+              </div> -->
+
+            </div>
+            <div class="text-small mb-1"><a href="#!"
+                class="text-decoration-none text-muted"><small>{{productList.productDetail}}</small></a></div>
+            <h2 class="fs-6"><a href="#!"
+                class="text-inherit text-dark  text-decoration-none">{{productList.productName}}</a></h2>
+            <div>
+              <!--
+              <small class="text-warning"> <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i></small> <span class="text-muted small">4.5(149)</span> -->
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div><span class="text-dark">{{productList.price |currency:'INR'}}</span>
+                <!-- <span
+                  class="text-decoration-line-through text-muted">{{productList.pricedrop}}</span> -->
+              </div>
+              <div><button id="add" (click)="addtocart(productList.productId)" class="btn btn-success btn-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-plus">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg> Add</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- <app-footer></app-footer> -->

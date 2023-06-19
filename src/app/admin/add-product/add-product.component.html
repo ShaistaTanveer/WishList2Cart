@@ -1,0 +1,22 @@
+<h5>UPLOAD YOU CSV FILE</h5>
+<br>
+
+<!-- <div class="container" style="padding:50px">
+  <form [formGroup]="form" (ngSubmit)="submitImage()">
+    <div class="form-group">
+      <input type="file" (change)="uploadFile($event)">
+      <div class="form-group">
+        <button class="btn btn-success btn-block btn-lg btn-block">Submit File</button>
+      </div>
+    </div>
+  </form>
+</div> -->
+<form (submit)="onSignup(SignupForm)" #SignupForm="ngForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Uploaded BY</mat-label>
+    <input type="text" name="name" ngModel matInput placeholder="name" #nameInput="ngModel" required />
+  </mat-form-field><br />
+  <input type="file" name="profileimage" id="file" (change)="onFileChanged($event)" />
+  <br />
+  <button mat-raised-button color="warn" type="submit">REGISTER</button>
+</form>

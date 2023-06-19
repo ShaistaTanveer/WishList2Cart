@@ -1,0 +1,17 @@
+.form-control {
+  border: none;
+  padding: auto;
+}
+
+.btn-search-icon {
+  /* border-radius:30px ; */
+  background-color: rgb(255, 153, 0);
+  border: none;
+  padding: 0.55rem;
+  width: 40px;
+}
+
+.style img {
+  width: 165px;
+  height: 165px;
+}
